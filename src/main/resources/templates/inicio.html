@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:insert="layout::head">
+<meta charset="UTF-8">
+</head>
+<body>
+	<nav th:insert="layout::navbar"></nav>
+	<h1>Primera prueba exitosa</h1>
+	<table class="table">
+		<tr>
+			<th>ID</th>
+			<th>COD ALUMNO</th>
+			<th>ALUMNO</th>
+		</tr>
+		<tr th:each="alu : ${listAlumno}">
+			<td th:text="${alu.idAlumno}"></td>
+			<td th:text="${alu.codAlumno}"></td>
+			<td th:text="${alu.alumno}"></td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:insert="layout::head">
+<meta charset="UTF-8">
+</head>
+<body>
+	<nav th:insert="layout::navbar"></nav>
+	<br>
+	<div sec:authorize="hasRole('ADMIN')">
+		<a class="link-danger fs-2" th:href="@{/inicio/lista-alumno}">Lista</a>
+	</div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:fragment="head">
+<meta charset="UTF-8">
+<title>Prueba-BS5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.css}">
+<script type="text/javascript" th:src="@{/js/bootstrap.bundle.js}"></script>
+<script type="text/javascript" th:src="@{/js/jquery3.6.0/jquery.js}"></script>
+</head>
+<body>
+
+	<nav th:fragment="navbar"
+		class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Alumno</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item p-2">
+						<button class="btn btn-success" sec:authentication="name"
+							disabled="disabled"></button>
+					</li>
+					<li class="nav-item p-2">
+						<button class="btn btn-primary" disabled="disabled" sec:authentication="principal.authorities"></button>
+					</li>
+					<li class="nav-item p-2">
+						<a href="javascript:history.back()"> Volver Atrás</a>
+					</li>
+					<li class="nav-item p-2">
+						<!-- se conecta con security para cerrar sesion -->
+						<form th:action="@{/logout}" method="post">
+							<button type="submit" class="btn btn-danger">Salir</button>
+						</form>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+</body>
+</html>
