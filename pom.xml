@@ -8,10 +8,10 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>rogger.guia.app</groupId>
-	<artifactId>DemoControllerPrueba</artifactId>
+	<artifactId>ThymealfSecurity</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>DemoControllerPrueba</name>
-	<description>DemoControllerPrueba</description>
+	<name>ThymealfSecurity</name>
+	<description>ThymealfSecurity</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>

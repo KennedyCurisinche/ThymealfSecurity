@@ -11,6 +11,7 @@ import rogger.guia.app.c.service.AlumnoService;
 @Controller
 @RequestMapping("/inicio")
 public class InicioController {
+	
 	@Autowired
 	private AlumnoService service;
 	
@@ -19,4 +20,5 @@ public class InicioController {
 		model.addAttribute("listAlumno", service.listar());
 		return "inicio";
 	}
+	
 }

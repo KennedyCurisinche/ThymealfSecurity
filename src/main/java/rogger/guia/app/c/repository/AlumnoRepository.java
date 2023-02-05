@@ -7,6 +7,7 @@ import rogger.guia.app.c.model.Alumno;
 
 @Repository
 public interface AlumnoRepository extends JpaRepository<Alumno, Long> {
-	Boolean existsByIdAlumno(Long idAlumno);
+	
 	Alumno findByCodAlumno(String username);
+	
 }

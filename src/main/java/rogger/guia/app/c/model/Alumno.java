@@ -22,7 +22,8 @@ import lombok.NoArgsConstructor;
 @Entity
 @Table(name = "alumno")
 public class Alumno implements Serializable {
-	private static final long serialVersionUID = 1L;
+	
+	private static final long serialVersionUID = -897780274291164734L;
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -35,4 +36,5 @@ public class Alumno implements Serializable {
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "rol_alu", joinColumns = @JoinColumn(name = "idalu"), inverseJoinColumns = @JoinColumn(name = "idrol"))
 	private Set<Rol> roles = new HashSet<>();
+	
 }

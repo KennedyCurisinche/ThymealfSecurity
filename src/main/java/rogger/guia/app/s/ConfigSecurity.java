@@ -11,18 +11,19 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import rogger.guia.app.s.service.AlumnoDetailsServiceImpl;
+import rogger.guia.app.s.service.UserDetailServiceImpl;
 
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true)
 public class ConfigSecurity extends WebSecurityConfigurerAdapter {
+	
 	@Autowired
-	private AlumnoDetailsServiceImpl alumnoDetailsServiceImpl;
+	private UserDetailServiceImpl userDetailServiceImpl;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.userDetailsService(alumnoDetailsServiceImpl).passwordEncoder(encriptar());
+		auth.userDetailsService(userDetailServiceImpl).passwordEncoder(encriptar());
 	}
 
 	@Override

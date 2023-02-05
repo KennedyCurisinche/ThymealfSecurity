@@ -21,11 +21,13 @@ import rogger.guia.app.c.emuns.NombreRol;
 @Entity	
 @Table(name = "rol")
 public class Rol implements Serializable {
-	private static final long serialVersionUID = 1L;
-
+	
+	private static final long serialVersionUID = -2485898877390183389L;
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idRol;
 	@Enumerated(EnumType.STRING)
 	private NombreRol rol;
+	
 }

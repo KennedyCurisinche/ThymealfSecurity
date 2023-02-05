@@ -16,18 +16,18 @@ import rogger.guia.app.c.model.Alumno;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AlumnoPrincipal implements UserDetails {
-	private static final long serialVersionUID = 1L;
+public class UserDetail implements UserDetails {
+	
+	private static final long serialVersionUID = 4934430881395912161L;
 	
 	private Alumno alumno;
 	private Collection<? extends GrantedAuthority> auth;
 	
-	public static AlumnoPrincipal build(Alumno alumno) {
-		List<GrantedAuthority> roles = alumno.getRoles()
-				.stream()
+	public static UserDetail build(Alumno alumno) {
+		List<GrantedAuthority> roles = alumno.getRoles().stream()
 				.map(r -> new SimpleGrantedAuthority(r.getRol().name()))
 				.collect(Collectors.toList());
-		return new AlumnoPrincipal(alumno, roles);
+		return new UserDetail(alumno, roles);
 	}
 
 	@Override
