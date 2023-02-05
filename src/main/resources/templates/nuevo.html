@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head th:fragment="head">
+<meta charset="UTF-8">
+</head>
+<body>
+
+	<h1 class="text-center">Nuevo usuario</h1>
+	
+	<div class="card">
+	
+		<div class="card-body">
+		
+			<form th:action="@{/nuevo}" method="post" th:object="${nuevo}">
+			
+				<div class="mb-3">
+					<label for="codigo" class="form-label">Ingrese codigo de alumno</label> 
+					<input name="codigo" id="codigo" autofocus="autofocus" 
+						type="text" class="form-control" placeholder="AT00000000">
+				</div>
+				
+				<div class="mb-3">
+					<label for="alumno" class="form-label">Ingrese nombre</label> 
+					<input name="alumno" id="alumno" autofocus="autofocus" 
+						type="text" class="form-control" placeholder="Rogger">
+				</div>
+
+				<div class="mb-3">
+					<label for="constrasenia" class="form-label">Ingrese su contraseña</label> 
+					<input name="constrasenia" id="constrasenia" required autofocus="autofocus" type="password"
+						class="form-control" placeholder="****************">
+				</div>
+				
+				<div class="mb-3">
+					<label for="rol" class="form-label">Indique un rol</label>
+					<input name="rol" id="rol" required autofocus="autofocus" type="text"
+						class="form-control" placeholder="user - admin">
+				</div>
+				
+				<input class="btn btn-success" type="submit" value="Guardar usuario">
+				
+			</form>
+			
+		</div>
+		
+	</div>
+	
+</body>
+</html>

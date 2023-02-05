@@ -4,26 +4,38 @@
 <meta charset="UTF-8">
 </head>
 <body>
+
 	<h1 class="text-center">Iniciar sesion</h1>
+	
 	<div class="card">
+	
 		<div class="card-body">
+		
 			<form th:action="@{/login}" method="post">
+			
 				<div class="mb-3">
-					<label for="username" class="form-label">Ingrese codigo de
-						alumno</label> <input name="username" id="username" autofocus="autofocus"
-						type="text" class="form-control" placeholder="AT00000000" required="required">
+					<label for="username" class="form-label">Ingrese codigo de alumno</label> 
+					<input name="username" id="username" autofocus="autofocus" 
+						type="text" class="form-control" placeholder="AT00000000">
 				</div>
 
 				<div class="mb-3">
-					<label for="password" class="form-label">Ingrese su
-						contraseña</label> <input name="password" id="username"
-						required="required" autofocus="autofocus" type="password"
+					<label for="password" class="form-label">Ingrese su contraseña</label> 
+					<input name="password" id="username" required autofocus="autofocus" type="password"
 						class="form-control" placeholder="****************">
 				</div>
 				
 				<input class="btn btn-success" type="submit" value="Iniciar sesion">
+				
 			</form>
+			
+			<br>
+			
+			<a class="btn bg-primary text-white" th:href="@{/nuevo}">Nuevo usuario</a>
+			
 		</div>
+		
 	</div>
+	
 </body>
 </html>

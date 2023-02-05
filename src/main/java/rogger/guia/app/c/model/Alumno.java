@@ -36,5 +36,12 @@ public class Alumno implements Serializable {
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "rol_alu", joinColumns = @JoinColumn(name = "idalu"), inverseJoinColumns = @JoinColumn(name = "idrol"))
 	private Set<Rol> roles = new HashSet<>();
+
+	public Alumno(String codAlumno, String alumno, String contrasenia, Boolean activo) {
+		this.codAlumno = codAlumno;
+		this.alumno = alumno;
+		this.contrasenia = contrasenia;
+		this.activo = activo;
+	}
 	
 }
