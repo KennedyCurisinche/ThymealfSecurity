@@ -1,12 +1,11 @@
 package rogger.guia.app.c.model;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -35,8 +34,8 @@ public class Alumno implements Serializable {
 	private Boolean activo;
 	
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(name = "rol_alu", joinColumns = @JoinColumn(name = "idalu", foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(id_alumno) references alumno(id_alumno)")), inverseJoinColumns = @JoinColumn(name = "idrol", foreignKey = @ForeignKey(foreignKeyDefinition = "foreign key(id_rol) references rol(id_rol)")))
-	private List<Rol> roles = new ArrayList<>();
+	@JoinTable(name = "rol_alu", joinColumns = @JoinColumn(name = "idalu"), inverseJoinColumns = @JoinColumn(name = "idrol"))
+	private Set<Rol> roles = new HashSet<>();
 
 	public Alumno(String codAlumno, String alumno, String contrasenia, Boolean activo) {
 		this.codAlumno = codAlumno;
